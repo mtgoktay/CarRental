@@ -15,7 +15,7 @@ namespace ConsoleUI
                 Console.WriteLine(car.ModelYear);
                 Console.WriteLine(car.Description);
                 Console.WriteLine(car.DailyPrice);
-                Console.WriteLine("---------------------");
+                Console.WriteLine("---------------------");   
             }
             
         }
