@@ -9,9 +9,9 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfBrandDal : IBrandDal
+    public class EfColorDal : IColorDal
     {
-        public void Add(Brand entity)
+        public void Add(Color entity)
         {
             using (NorthwindContext context = new NorthwindContext())
             {
@@ -21,7 +21,7 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public void Delete(Brand entity)
+        public void Delete(Color entity)
         {
             using (NorthwindContext context = new NorthwindContext())
             {
@@ -31,26 +31,26 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public Brand Get(Expression<Func<Brand, bool>> filter)
+        public Color Get(Expression<Func<Color, bool>> filter)
         {
             using (NorthwindContext context = new NorthwindContext())
             {
-                return context.Set<Brand>().SingleOrDefault(filter);
+                return context.Set<Color>().SingleOrDefault(filter);
 
             }
         }
 
-        public List<Brand> GetAll(Expression<Func<Brand, bool>> filter = null)
+        public List<Color> GetAll(Expression<Func<Color, bool>> filter = null)
         {
             using (NorthwindContext context = new NorthwindContext())
             {
                 return filter == null
-                ? context.Set<Brand>().ToList()
-                : context.Set<Brand>().Where(filter).ToList();
+                ? context.Set<Color>().ToList()
+                : context.Set<Color>().Where(filter).ToList();
             }
         }
 
-        public void Update(Brand entity)
+        public void Update(Color entity)
         {
             using (NorthwindContext context = new NorthwindContext())
             {

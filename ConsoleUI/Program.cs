@@ -2,6 +2,7 @@
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using System;
+using System.Collections.Generic;
 
 namespace ConsoleUI
 {
@@ -9,16 +10,15 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+             
             CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var car in carManager.GetAll())
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
+            ColorManager colorManager = new ColorManager(new EfColorDal());
+            List<String> menu = new List<string> 
             {
-                Console.WriteLine(car.CarId);
-                Console.WriteLine(car.ModelYear);
-                Console.WriteLine(car.Description);
-                Console.WriteLine(car.DailyPrice);
-                Console.WriteLine("---------------------");   
-            }
-            
+                
+
+            };
         }
     }
 }
