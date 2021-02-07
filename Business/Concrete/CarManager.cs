@@ -18,15 +18,20 @@ namespace Business.Concrete
 
         public void Add(Car car)
         {
-            if (car.DailyPrice > 0)
+            if (car.DailyPrice > 0 && car.BrandId>=1)
             {
                 _carDal.Add(car);
                 Console.WriteLine("Arac Sisteme basariyla eklendi.");
             }
             else
             {
-                Console.WriteLine("Lutfen aracin gunluk kirasini sifirdan buyuk bir deger giriniz.");
+                Console.WriteLine("Lutfen aracin gunluk kirasini sifirdan buyuk, Marka Id' yi 1'den büyük bir deger giriniz.");
             }
+        }
+
+        public void AddCar(CarManager carManager1, CarManager carManager2)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Car> GetAll()
