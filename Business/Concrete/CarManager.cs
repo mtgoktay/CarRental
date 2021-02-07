@@ -16,6 +16,19 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
+        public void Add(Car car)
+        {
+            if (car.DailyPrice > 0)
+            {
+                _carDal.Add(car);
+                Console.WriteLine("Arac Sisteme basariyla eklendi.");
+            }
+            else
+            {
+                Console.WriteLine("Lutfen aracin gunluk kirasini sifirdan buyuk bir deger giriniz.");
+            }
+        }
+
         public List<Car> GetAll()
         {
             //İş kodları
