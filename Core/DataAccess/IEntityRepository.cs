@@ -1,11 +1,11 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace DataAccess.Abstract
-{
+namespace Core.DataAccess    //Core: !!!Evrensel katmanım benim. Bütün projelerimde kullanabilirim
+{                            //******Core katmanı diğer katmanları referans almaz.
     //Generic Repository Design Patter=  Tasarım Deseni
     public interface IEntityRepository<T> where T:class,IEntity,new()    //Generic constraint=Generic Kısıt.
     {                   //class: Referans tip olabilir, IEntity yada implamente olan bir nesne olabilir.
